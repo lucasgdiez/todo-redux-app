@@ -13,7 +13,7 @@ const SHOW_ALL = 'SHOW_ALL';
 const SHOW_COMPLETE = 'SHOW_COMPLETED';
 const SHOW_ACTIVE = 'SHOW_ACTIVE';
 
-export const visibilityFiltersContainer = {
+export const visibilityFilters = {
     SHOW_ALL,
     SHOW_COMPLETE,
     SHOW_ACTIVE
