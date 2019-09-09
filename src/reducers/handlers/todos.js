@@ -1,32 +1,25 @@
 import { ADD_TODO, TOGGLE_TODO } from '../../actions/actionsTypes';
 
-const initialState = {
-    todos: []
-};
-
-const todos = (state = initialState, action) => {
+export const todos = (state = [], action) => {
     switch(action.type) {
         case ADD_TODO: 
-            return {
-                todos: [
-                    ...state.todos,
-                    {
-                        text: action.text,
-                        completed: false
-                    }
-                ]
-            }
+            return [
+                ...state,
+                {
+                    text: action.text,
+                    completed: false
+                }
+            ]            
         case TOGGLE_TODO: {
-            return {
-                todos: state.todos.map((todo, index) => {
-                    if(index === action.index) {
-                        return {
-                            ...state.todos,
+           return state.map((todo, index) => {
+                if(index === action.index) {
+                    return {
+                            ...todo,
                             completed: !todo.completed
-                        }
-                    }
-                })
-            }
+                        };
+                }
+                return todo;
+            })
         }
         default:
             return state;
