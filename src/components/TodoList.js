@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Todo } from './Todo';
 
-export const TodoList = ({ todos, onTodoClick }) => (
+const TodoList = ({ todos, onTodoClick }) => (
     <ul>
         { todos.map((todo, index) => {
             // eslint-disable-next-line no-unused-expressions
@@ -22,3 +22,4 @@ TodoList.propTypes = {
     onTodoClick: PropTypes.func.isRequired
 }
 
+export default TodoList;

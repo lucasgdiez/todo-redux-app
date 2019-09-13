@@ -1,5 +1,8 @@
 import React from 'react';
-import { Todo } from './components/Todo'
+import { Todo } from './components/Todo';
+import { Footer } from './components/Footer';
+import { AddTodo } from './containers/AddTodo';
+import VisibleTodoList from './containers/VisibleTodoList';
  
 function App() {
 
