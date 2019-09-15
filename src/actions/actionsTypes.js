@@ -5,6 +5,8 @@ export const ADD_TODO = 'ADD_TODO';
 //Toggles completion of todo
 export const TOGGLE_TODO = 'TOGGLE_TODO';
 
+export const DELETE_TODO = 'DELETE_TODO';
+
 //Sets visibility
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 
