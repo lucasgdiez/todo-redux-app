@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO } from '../../actions/actionsTypes';
+import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from '../../actions/actionsTypes';
 
 export const todos = (state = [], action) => {
     switch(action.type) {
@@ -6,8 +6,9 @@ export const todos = (state = [], action) => {
             return [
                 ...state,
                 {
+                    id: action.id,
                     text: action.text,
-                    completed: false
+                    completed: false,
                 }
             ]            
         case TOGGLE_TODO: {
@@ -20,6 +21,11 @@ export const todos = (state = [], action) => {
                 }
                 return todo;
             })
+        }
+
+        case DELETE_TODO: {
+            console.log('delete this todo');
+            console.log('action index', action);
         }
         default:
             return state;

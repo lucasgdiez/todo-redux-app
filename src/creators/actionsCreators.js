@@ -1,9 +1,11 @@
-import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER } from '../actions/actionsTypes';
+import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER , DELETE_TODO} from '../actions/actionsTypes';
 
 //Adds a new todo
+let nextTodoId = 0;
 export const addTodo = (text) => {
     return {
         type: ADD_TODO,
+        id: nextTodoId++,
         text
     }
 };
@@ -14,6 +16,13 @@ export const toggleTodo = (index) => {
         index
     }
 };
+
+export const deleteTodo = (index) => {
+    return {
+        type: DELETE_TODO,
+        index
+    }
+}
 
 export const setVisiblityFilter = (filter) => {
     return {

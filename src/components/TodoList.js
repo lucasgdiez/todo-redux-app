@@ -1,14 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Todo } from './Todo';
+import { DeleteTodo } from '../containers/DeleteTodo';
+
 
 const TodoList = ({ todos, onTodoClick }) => (
-    <ul>
+    <div>
         { todos.map((todo, index) => {
-            // eslint-disable-next-line no-unused-expressions
-            <Todo key={index} {...todo} onClick={() => onTodoClick(index)} />
+            return (
+                <div>
+                    {/* pass this todo.id to the delete todo
+                        pass the prop todo.id to delete todo
+                        on delete todo dispatch the action based on the id
+                        then on the reducer pop that id on the array and return the new state
+                        with the todo deleted
+                    */}
+                    <DeleteTodo />
+                    <Todo key={todo.id} {...todo} onClick={() => onTodoClick(index)} />
+                </div>
+            )
         })}
-    </ul>
+    </div>
 )
 
 TodoList.propTypes = {
