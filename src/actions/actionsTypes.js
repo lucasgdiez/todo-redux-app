@@ -20,3 +20,14 @@ export const visibilityFilters = {
     SHOW_COMPLETE,
     SHOW_ACTIVE
 }
+
+//Sets subreddit
+export const SELECT_SUBREDDIT = 'SELECT_SUBREDDIT';
+
+//Invalidates when pushing refresh
+export const INVALIDATE_SUBREDDIT = 'INVALIDATE_SUBREDDIT';
+
+//Performs request to the Reddit API
+export const REQUEST_POSTS = 'REQUEST_POSTS';
+
+export const RECEIVE_POSTS = 'RECEIVE_POSTS';
