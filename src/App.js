@@ -8,16 +8,15 @@ import VisibleTodoList from './containers/VisibleTodoList';
 
 const store = createStore(todoApp);
  
-function App() {
+const App = ({ match: {params} }) => {
+  console.log(params);
   return (
-    <Provider store={store}>
-      <div className="App">
-        <AddTodo />
-        <VisibleTodoList />
-        <Footer />
-      </div>
-    </Provider>
-  );
+    <div>
+      <AddTodo />
+      <VisibleTodoList filter={params.filter || 'SHOW_ALL'} />
+      <Footer/>
+    </div>
+  )
 }
 
 export default App;
